@@ -1,0 +1,47 @@
+{
+  "name": "webconsole-tsg",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joyent/webconsole-tsg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joyent/webconsole-tsg/issues"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "dev": "node --inspect -r dotenv/config server.js dotenv_config_path=../.env",
+    "lint": "belly-button -f",
+    "pretest": "yarn run lint",
+    "test": "lab -v -a code",
+    "test-ci": "yarn run lint && lab -m 10000 -c -r junit -o test.xml -r html -o test.html -r console -o stdout"
+  },
+  "dependencies": {
+    "blankie": "4.0.0",
+    "brule": "3.1.0",
+    "cloudapi-gql": "8.0.0",
+    "crumb": "7.0.0",
+    "graphi": "5.7.0",
+    "hapi": "17.4.0",
+    "hapi-auth-signi": "0.1.0",
+    "hapi-pino": "4.0.x",
+    "hapi-triton-auth": "3.0.0",
+    "http-signature": "1.2.0",
+    "inert": "5.1.0",
+    "metri": "0.1.0",
+    "scooter": "5.0.0",
+    "tsg-graphql": "1.0.0"
+  },
+  "devDependencies": {
+    "belly-button": "4.x.x",
+    "cb-barrier": "1.x.x",
+    "code": "5.x.x",
+    "dotenv": "5.x.x",
+    "lab": "15.x.x"
+  }
+}

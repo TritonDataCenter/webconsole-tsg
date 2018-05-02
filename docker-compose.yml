@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+  webconsole-instances:
+    image: joyent/webconsole-tsg:1.0.0
+    restart: always
+    mem_limit: 1g
+    network_mode: bridge
+    labels:
+      - triton.cns.services=webconsole-tsg
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 8083:8083

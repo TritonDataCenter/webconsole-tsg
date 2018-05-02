@@ -1,0 +1,10 @@
+sudo: false
+language: node_js
+node_js:
+  - "8"
+  - "9"
+  - "node"
+before_install:
+  - cd app
+before_script:
+  - npx nsp check --reporter summary
