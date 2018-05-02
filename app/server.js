@@ -2,7 +2,6 @@
 
 // Core Node.js modules
 const Fs = require('fs');
-const { homedir } = require('os');
 const { join } = require('path');
 
 const Blankie = require('blankie');
