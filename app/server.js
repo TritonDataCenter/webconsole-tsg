@@ -150,19 +150,23 @@ async function main () {
       options: {
         prettyPrint: NODE_ENV !== 'production'
       }
-    },
+    }
+  ]);
+
+  server.auth.default('sso');
+  server.auth.strategy('bearer', 'signature', { authorizationType: 'bearer' });
+
+  await server.register([
     {
       plugin: Metri,
       options: {
-        auth: 'signature'
+        auth: 'bearer'
       },
       routes: {
         prefix: `/${NAMESPACE}`
       }
     }
   ]);
-
-  server.auth.default('sso');
 
   server.route({
     method: 'get',
